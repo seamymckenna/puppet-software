@@ -112,8 +112,11 @@ class software::params (
     } elsif versioncmp($::macosx_productversion_major, '10.11') == 0 {
       #### utilities ####
       $onyx_url = 'http://joel.barriere.pagesperso-orange.fr/download/1011/OnyX.dmg'
+    } elsif versioncmp($::macosx_productversion_major, '10.12') == 0 {
+      #### utilities ####
+      $onyx_url = 'http://joel.barriere.pagesperso-orange.fr/download/1012/OnyX.dmg'
     } else {
-      fail("The ${module_name} module only supports 'Mountain Lion', 'Mavericks', 'Yosemite', 'El Capitan'.")
+      fail("The ${module_name} module only supports 'Mountain Lion', 'Mavericks', 'Yosemite', 'El Capitan', 'Sierra'.")
     }
   } elsif ($::operatingsystem == 'Ubuntu') and (versioncmp($::operatingsystemrelease, '12.04') >= 0) {
     #### init ####
